@@ -13,14 +13,15 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import org.himanshu.rest.Entities.Company;
-import org.himanshu.rest.Entities.Message;
+import org.himanshu.rest.Exception.CompanyCustomException;
+import org.himanshu.rest.Exception.Message;
 import org.himanshu.rest.Service.CompanyService;
 import org.himanshu.rest.Service.CompanyServiceImpl;
+
+import javassist.NotFoundException;
 
 /**
  * @author Himanshu
@@ -37,7 +38,12 @@ public class CompanyController {
 	@GET
 	public List<Company> getAllCompanies(){
 		
-		return	companyService.getAllcompanies();
+			List<Company> companies = companyService.getAllcompanies();;
+			
+			if (companies == null ) {
+				throw new CompanyCustomException(" No Companies currently exist.");
+			}
+			return companies;
 	}
 	// it was for angular rest client.
 /*	@GET
@@ -55,7 +61,11 @@ public class CompanyController {
 	@Path("/{companyName}")
 	public Company getCompanyDetails(@PathParam("companyName")String companyName){
 		
-		return	companyService.getCompanyDetails(companyName);
+				Company company = companyService.getCompanyDetails(companyName);
+				if (company == null ) {
+					throw new CompanyCustomException("This Company does not exist.");
+				}
+				return company;
 	}
 	
 
@@ -70,7 +80,6 @@ public class CompanyController {
 	@PUT
 	@Path("/update")
 	public Message updateCompany( Company company){
-		System.out.println("in side update");
 		Message message  = new Message();
 		message.setMessage(companyService.updateCompany(company));
 		return	message;

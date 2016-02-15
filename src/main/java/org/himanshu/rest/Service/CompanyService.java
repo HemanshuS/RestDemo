@@ -6,7 +6,7 @@ package org.himanshu.rest.Service;
 import java.util.List;
 
 import org.himanshu.rest.Entities.Company;
-import org.himanshu.rest.Utils.CompanyCustomException;
+import org.himanshu.rest.Exception.CompanyCustomException;
 
 /**
  * @author Himanshu

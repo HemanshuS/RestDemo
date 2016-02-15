@@ -6,9 +6,9 @@ package org.himanshu.rest.Service;
 import java.util.List;
 
 import org.himanshu.rest.Entities.Company;
+import org.himanshu.rest.Exception.CompanyCustomException;
 import org.himanshu.rest.Repositories.CompanyRepo;
 import org.himanshu.rest.Repositories.CompanyRepoImpl;
-import org.himanshu.rest.Utils.CompanyCustomException;
 
 /**
  * @author Himanshu
