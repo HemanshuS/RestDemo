@@ -31,6 +31,7 @@ URI exposed in this project are:
  I have tested all URIs with postman crome plugin.
  To access using Crome browser with URL http://localhost:8080/MyCompany/ which is having Anguilar client. 
  The angular client demonstrates to get the list of all companies, addition of companies and search of a company using a name.
- Negative cases has not been handled or tested.
+ Negative cases have not been handled or tested.
+ Data is being cached temporarily. No database has been used.
  
  
