@@ -20,10 +20,17 @@ A company has the following attributes: 
 + E­mail (not required) 
 + Phone Number (not required) 
 + One or more beneficial owner(s) 
-This project has goen through very basic level of testing.
+This project has gone through very basic level of testing.
 
 URI exposed in this project are:
- http://localhost:8080/MyCompany/companies
- http://localhost:8080/MyCompany/companies/{companyName}
- http://localhost:8080/MyCompany/companies/update 
- http://localhost:8080/MyCompany/companies/addOwner;owner=newOwner
+ http://localhost:8080/MyCompany/rest/companies
+ http://localhost:8080/MyCompany/rest/companies/{companyName}
+ http://localhost:8080/MyCompany/rest/companies/update 
+ http://localhost:8080/MyCompany/rest/companies/addOwner;owner=newOwner
+ 
+ I have tested all URIs with postman crome plugin.
+ To access using Crome browser with URL http://localhost:8080/MyCompany/ which is having Anguilar client. 
+ The angular client demonstrates to get the list of all companies, addition of companies and search of a company using a name.
+ Negative cases has not been handled or tested.
+ 
+ 
